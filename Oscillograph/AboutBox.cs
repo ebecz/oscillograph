@@ -44,16 +44,7 @@ namespace PowerSystem
         {
             get
             {
-                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
-                {
-                    System.Deployment.Application.ApplicationDeployment ad = System.Deployment.Application.ApplicationDeployment.CurrentDeployment;
-                    return ad.CurrentVersion.ToString();
-                }
-                else
-                {
-                    return Application.ProductVersion;
-                }
-                //Assembly.GetExecutingAssembly().GetName().Version.ToString()
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
             }
         }
 
